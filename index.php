@@ -22,20 +22,19 @@ $playlists = glob("./webpage/songs/*.txt");
 		<div id="listarea">
 			<ul id="musiclist">
 
-    <?php foreach ($mp3files as $file) {?>
-            <li class="mp3item">
-                <a href=<?= $file?>> <?= basename($file)?></a>
-                <?= filesize($file) . " (b)"?>
-            </li>
-    <?php } ?>
+                <?php foreach ($mp3files as $file) {?>
+                        <li class="mp3item">
+                            <a href=<?= $file?>> <?= basename($file)?></a>
+                            <?= filesize($file) . " (b)"?>
+                        </li>
+                <?php } ?>
 
-				<li class="playlistitem">
-					<a href="music.php?playlist=mypicks.txt">mypicks.txt</a>
-				</li>
+                <?php foreach ($playlists as $playlist) {?>
+                    <li class="playlistitem">
+                        <a href=<?= $playlist?>> <?= basename($playlist)?></a>
+                    </li>
+                <?php } ?>
 
-				<li class="playlistitem">
-					<a href="music.php?playlist=playlist.txt">playlist.txt</a>
-				</li>
 			</ul>
 		</div>
 
